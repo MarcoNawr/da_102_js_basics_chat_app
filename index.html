@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body id="body">
+    <header>
+        <button id="btnDark" onclick="toogleDisplayMode()">Dark/White</button>
+    </header>
+    <section class="sectionEntry flexROW_xCenter_yCenter">
+        <div id="heroContent" class="sectionEntryContent contentContainer sectionEntryContenBright">
+            <h1>Chat-App</h1>
+            <div class="errorArea dnone" id="errorArea">
+                <p id="errorMessage" class="errorMessage">FEHLERMELDUNG</p>
+            </div>
+            <div class="entryArea contentContainer ">
+                <div class="inputArea">
+                    <label for="inputName">Name: </label>
+                    <input class="inputWidth" id="inputName" name="name" type="text" placeholder="Name">
+                </div>
+                <div class="inputArea">
+                    <label for="inputMessage">Nachricht: </label>
+                    <textarea class="inputWidth" id="inputMessage" name="message"
+                        placeholder="Gib deine Nachricht ein ..."></textarea>
+                </div>
+                <div class="buttonArea flexROW_xCenter_yCenter">
+                    <button class="btn" onclick="sendMessage()">senden</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="sectionChatHistory flexROW_xCenter_yCenter">
+        <div class="sectionChatHistoryContent contentContainer">
+            <h2>Deine bisherigen Nachrichten</h2>
+            <div id="messageAreas">
+                <!-- ADD here messageAreas -->
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

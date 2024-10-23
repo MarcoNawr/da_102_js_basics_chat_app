@@ -1,0 +1,444 @@
+/*==================================================================================================== 
+    START ==> INITIAL CSS RESET
+==================================================================================================== */
+/*  Use a more-intuitive box-sizing model. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin & padding*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Typographic tweaks (Add accessible line-height)*/
+body {
+    line-height: 1.5;
+}
+
+/* Improve media defaults*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove built-in form typography styles (Überall Standard font nutzen)*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Avoid text overflows (Zu Lange Wörter werden nun umgebrochen (may change for Headline's to normal, if needed))*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*==================================================================================================== 
+    END ==> *
+==================================================================================================== */
+
+
+
+
+/*==================================================================================================== 
+    START ==> :ROOT
+==================================================================================================== */
+:root {
+
+    /*============================================================ 
+        :ROOT - BASICS
+    ============================================================ */
+    /*Basics - for Container*/
+    --stdMargin: 1rem;
+    --stdPadding: 1rem;
+    --stdRadius: 0.5rem;
+    --stdGap: 1.5rem;
+
+    /*Basics for InteractiveElements (Link / Button / Input) */
+    --stdPaddingInteractiveElements: 0.5rem 5.5rem;
+    --stdRadiusInteractiveElements: 0.5rem 1.5rem;
+
+
+    /*============================================================ 
+        :ROOT - FONTS
+    ============================================================ */
+    --fontFamilyHeadlines: Arial, Helvetica, sans-serif;
+    --fontFamilyDefault: Verdana, Geneva, Tahoma, sans-serif;
+
+
+
+
+    /*========================================
+    FONT SIZES - AS A TYPICAL STRUCTURE FOR WEBPAGES
+    USAGE:
+     ==> "...Default..." for Text and Inputs
+     ==> "...Sec..." e.g. Imagedescription (add italic and a lighter color) 
+     ==> "...Tertiary..." e.g. Tables
+     ========================================*/
+
+    /*====================
+    FONT SIZES - INTERACTION HEAVY
+    ====================*/
+    /*Mobile*/
+    /*40px*/
+    /*Use between 28px-40px*/
+    --fsMobileH1: 2.5rem;
+    /*32px*/
+    --fsMobileH2: 2rem;
+    /*28px*/
+    --fsMobileH3: 1.75rem;
+    /*24px*/
+    --fsMobileH4: 1.5rem;
+    /*18px* - Use between 16px-18px*/
+    --fsMobileDefault: 1.125rem;
+    /*16px - Use 2px smaller than default*/
+    --fsMobileSec: 1rem;
+    /*14px*/
+    --fsMobileTertiary: 0.875rem;
+
+    /*Desktop*/
+    /*48px* - Use between 35px-50px*/
+    --fsDesktopH1: 3rem;
+    /*40px*/
+    --fsDesktopH2: 2.5rem;
+    /*36px*/
+    --fsDesktopH3: 2.25rem;
+    /*32px*/
+    --fsDesktopH4: 2rem;
+    /*20px* - Use between 14px-20px*/
+    --fsDesktopDefault: 1.25rem;
+    /*18px* - Use 2px smaller than default*/
+    --fsDesktopSec: 1.125rem;
+    /*16px*/
+    --fsDesktopTertiary: 1rem;
+
+
+    /*============================================================ 
+        :ROOT - COLOURS
+    ============================================================ */
+    /*Text AND Background*/
+    --clrTextBright: white;
+    --clrTextDark: black;
+    --clrBackgroundBright: white;
+    --clrBackgroundDark: black;
+
+    --clrButton: #fa9fe4;
+    --clrButtonHover: #ffbcee;
+
+
+    --containerBackgroundBright: rgba(255, 255, 255, 0.3);
+    --containerBackgroundDark: rgba(0, 0, 0, 0.3);
+}
+
+/*==================================================================================================== 
+    END ==> :ROOT
+==================================================================================================== */
+
+
+
+
+
+/*==================================================================================================== 
+    START ==> GLOBAL
+==================================================================================================== */
+/*============================================================ 
+    GLOBAL ==> BASIC ELEMENTS
+============================================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontFamilyDefault);
+    font-size: var(--fsDesktopDefault);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fontFamilyHeadlines);
+}
+
+h1 {
+    font-size: var(--fsDesktopH1);
+}
+
+h2 {
+    font-size: var(--fsDesktopH2);
+}
+
+h3 {
+    font-size: var(--fsDesktopH3);
+}
+
+h4 {
+    font-size: var(--fsDesktopH4);
+}
+
+a {
+    text-decoration: none;
+    padding: var(--stdPaddingInteractiveElements);
+    background-color: var(--clrButton);
+}
+
+a:hover {
+    background-color: var(--clrButtonHover);
+}
+
+button {
+    border-radius: var(--stdRadiusInteractiveElements);
+    padding: var(--stdPaddingInteractiveElements);
+    background-color: var(--clrButton);
+    transition: all 150ms ease-in-out;
+}
+
+button:hover {
+    background-color: var(--clrButtonHover);
+    transform: translateY(-2px);
+}
+
+input,
+textarea {
+    font-size: var(--fsDesktopDefault);
+    padding: 16px 32px;
+    border-radius: var(--stdRadiusInteractiveElements);
+}
+
+.odd {
+    background-color: var(--containerBackgroundDark);
+}
+
+.even {
+    background-color: var(--containerBackgroundBright);
+}
+
+.dark {
+    background-color: var(--clrBackgroundDark);
+    color: var(--clrTextBright);
+}
+
+/*============================================================ 
+    GLOBAL ==> USEFUL CLASSES
+============================================================ */
+.contentContainer {
+    min-width: 320px;
+    max-width: 1440px;
+}
+
+/*BASIC FLEXBOX KLASSEN Row Center Column Center */
+.flexROW_xCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.flexROW_xSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.flexROW_xCenter_yCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexCOLUMN_xCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexCOLUMN_xCenter_yCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dnone {
+    display: none;
+}
+
+.errorMessage {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.116);
+    padding: 10px;
+    border-radius: var(--stdRadius);
+    max-width: 400px;
+}
+
+/*==================================================================================================== 
+    END ==> GLOBAL
+==================================================================================================== */
+
+
+
+
+/*==================================================================================================== 
+    START ==> HEADER
+==================================================================================================== */
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+
+/*==================================================================================================== 
+    END ==> HEADER
+==================================================================================================== */
+
+
+
+
+/*==================================================================================================== 
+    START ==> MAIN
+==================================================================================================== */
+
+/*============================================================ 
+    SECTION sectionEntry
+============================================================ */
+.sectionEntry {
+    background-image: url(./img/hero1.jpg);
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sectionEntryContent {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px;
+    max-height: 100%;
+    gap: 16px;
+    border-radius: var(--stdRadius);
+}
+
+.sectionEntryContenDark {
+    background-color: var(--containerBackgroundDark);
+}
+
+.sectionEntryContenBright {
+    background-color: var(--containerBackgroundBright);
+}
+
+
+
+.entryArea {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 32px;
+}
+
+.inputArea {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+
+.inputWidth {
+    width: 250px;
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 200px;
+
+}
+
+textarea {
+    min-height: 100px;
+}
+
+
+/*============================================================ 
+    SECTION sectionEntry
+============================================================ */
+.sectionChatHistory {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#messageAreas div {
+    padding: 15px;
+}
+
+
+#messageAreas p {
+    max-width: 300px;
+}
+
+/*==================================================================================================== 
+    END ==> MAIN
+==================================================================================================== */
+
+
+
+
+/*==================================================================================================== 
+    START ==> ASIDE
+==================================================================================================== */
+
+/*============================================================ 
+    SECTION B
+============================================================ */
+.section__B {
+    /* add specific design for section background here */
+}
+
+.contentContainer__section__B {
+    /* add specific design for section content here */
+}
+
+
+/*============================================================ 
+    SECTION Y
+============================================================ */
+.section__Y {
+    /* add specific design for section background here */
+}
+
+.contentContainer__section__Y {
+    /* add specific design for section content here */
+}
+
+/*==================================================================================================== 
+    END ==> ASIDE
+==================================================================================================== */
+
+
+
+
+/*==================================================================================================== 
+    START ==> FOOTER
+==================================================================================================== */
+footer {
+    /* add specific design for footer background here */
+}
+
+.contentContainer__Footer {
+    /* add specific design for header content here */
+}
+
+/*==================================================================================================== 
+    END ==> FOOTER
+==================================================================================================== */
