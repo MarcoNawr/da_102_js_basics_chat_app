@@ -141,8 +141,8 @@ h6 {
     --clrButtonHover: #ffbcee;
 
 
-    --containerBackgroundBright: rgba(255, 255, 255, 0.3);
-    --containerBackgroundDark: rgba(0, 0, 0, 0.3);
+    --containerBackgroundBright: rgba(255, 255, 255, 0.1);
+    --containerBackgroundDark: rgba(0, 0, 0, 0.05);
 }
 
 /*==================================================================================================== 
@@ -199,6 +199,7 @@ a {
 
 a:hover {
     background-color: var(--clrButtonHover);
+    cursor: pointer;
 }
 
 button {
@@ -206,9 +207,11 @@ button {
     padding: var(--stdPaddingInteractiveElements);
     background-color: var(--clrButton);
     transition: all 150ms ease-in-out;
+    cursor: pointer;
 }
 
-button:hover {
+button:hover,
+button:focus {
     background-color: var(--clrButtonHover);
     transform: translateY(-2px);
 }
@@ -218,6 +221,11 @@ textarea {
     font-size: var(--fsDesktopDefault);
     padding: 16px 32px;
     border-radius: var(--stdRadiusInteractiveElements);
+}
+
+input:focus,
+textarea:focus {
+    background-color: hsl(314, 100%, 92%);
 }
 
 .odd {
@@ -318,7 +326,8 @@ header {
 ============================================================ */
 .sectionEntry {
     background-image: url(./img/hero1.jpg);
-    height: 90vh;
+    height: 80vh;
+    min-height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
