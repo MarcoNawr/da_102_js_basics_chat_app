@@ -325,12 +325,12 @@ header {
     SECTION sectionEntry
 ============================================================ */
 .sectionEntry {
-    background-image: url(./img/hero1.jpg);
+    /* background-image: url(./img/hero1.jpg); */
     height: 80vh;
     min-height: 600px;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
 }
 
 .sectionEntryContent {
